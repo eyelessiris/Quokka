@@ -5,6 +5,6 @@ module.exports = {
         .setName('와차차')
         .setDescription('와차차!!!'),
     async execute(interaction) {
-        await interaction.reply(`# 와차차!!!`);
+        await interaction.reply(`# 와차차!!!!!`);
     },
 };
