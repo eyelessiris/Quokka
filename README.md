@@ -1,3 +1,3 @@
 # Quokka
 
-A discord bot project.
+Quokka is a discord bot, made in Discord.js.
