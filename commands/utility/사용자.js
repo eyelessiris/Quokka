@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
+    category: utility
     data: new SlashCommandBuilder()
         .setName('사용자')
         .setDescription('사용자 정보'),
