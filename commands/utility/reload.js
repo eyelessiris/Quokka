@@ -46,10 +46,10 @@ module.exports = {
                 }
             }
 
-            await interaction.reply({ content: `불러오기 성공`, ephemeral: true });
+            await interaction.reply({ content: `명령어 다시 불러오기 성공`, ephemeral: true });
         } catch (error) {
             console.error('Failed to reload commands:', error);
-            await interaction.reply({ content: `불러오기 실패:\n\`${error.message}\``, ephemeral: true });
+            await interaction.reply({ content: `명령어 다시 불러오기 실패:\n\`${error.message}\``, ephemeral: true });
         }
     },
 };
