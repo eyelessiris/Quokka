@@ -35,7 +35,7 @@ module.exports = {
             }
 
             interaction.client.commands.set(newCommand.data.name, newCommand);
-            await interaction.reply({ content: `✅ Command \`${newCommand.data.name}\` reloaded successfully.`, ephemeral: true });
+            await interaction.reply({ content: ` Command \`${newCommand.data.name}\` reloaded successfully.`, ephemeral: true });
         } catch (error) {
             console.error(`❌ Failed to reload ${commandName}:`, error);
             await interaction.reply({ content: `❌ Failed to reload command \`${commandName}\`:\n\`${error.message}\``, ephemeral: true });
