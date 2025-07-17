@@ -1,7 +1,7 @@
 const { StringSelectMenuBuilder, StringSelectMenuOptionBuilder, SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
-    category: neis
+    category: 'neis',
     data: new SlashCommandBuilder()
         .setName('급식')
         .setDescription('급식을 불러옵니다.'),
