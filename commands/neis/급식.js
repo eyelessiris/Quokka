@@ -6,8 +6,8 @@ module.exports = {
         .setName('급식')
         .setDescription('급식을 불러옵니다.')
         .addStringOption(option =>
-            option.setName('number')
-                .setDescription('숫자를 선택하세요')
+            option.setName('type')
+                .setDescription('급식을 선택하세요.')
                 .setRequired(true)
                 .addChoices(
                     { name: '조식', value: '1' },
