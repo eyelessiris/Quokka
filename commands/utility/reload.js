@@ -5,8 +5,8 @@ const fs = require('node:fs');
 module.exports = {
     category: 'utility',
     data: new SlashCommandBuilder()
-        .setName('reload')
-        .setDescription('Reloads all commands.'),
+        .setName('불러오기')
+        .setDescription('명령어를 다시 불러옵니다.'),
     async execute(interaction) {
         if (interaction.user.id !== '607797808329916447') {
             return await interaction.reply({ content: '권한이 없습니다.', ephemeral: true });
