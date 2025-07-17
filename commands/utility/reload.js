@@ -13,7 +13,7 @@ module.exports = {
         const commandName = interaction.options.getString('command', true).toLowerCase();
         const command = interaction.client.commands.get(commandName);
 
-        if (message.author.id !== 607797808329916447) return;
+        if (interaction.author.id !== 607797808329916447) return;
 
         if (!command) {
             return interaction.reply(`There is no command with name \`${commandName}\`!`);
