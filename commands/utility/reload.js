@@ -16,10 +16,8 @@ module.exports = {
         const client = interaction.client;
 
         try {
-            // commands 객체 초기화
             client.commands.clear();
 
-            // commands 폴더 내 하위 폴더 모두 탐색
             const folders = fs.readdirSync(commandsDir).filter(f => fs.statSync(path.join(commandsDir, f)).isDirectory());
 
             for (const folder of folders) {
@@ -29,16 +27,13 @@ module.exports = {
                 for (const file of commandFiles) {
                     const filePath = path.join(commandsPath, file);
 
-                    // 캐시 삭제
                     delete require.cache[require.resolve(filePath)];
 
-                    // 새로 require
                     const command = require(filePath);
 
-                    // 필수 프로퍼티 확인 후 등록
                     if ('data' in command && 'execute' in command) {
-                        command.category = folder; // 카테고리 저장
-                        command.path = filePath;   // 경로 저장 (optional)
+                        command.category = folder;
+                        command.path = filePath;
                         client.commands.set(command.data.name, command);
                     } else {
                         console.warn(`[WARN] Command at ${filePath} is missing required "data" or "execute" property.`);
