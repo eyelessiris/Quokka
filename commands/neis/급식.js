@@ -23,5 +23,13 @@ module.exports = {
                     .setDescription('석식')
                     .setValue('dinner'),
             );
+
+        const row = new ActionRowBuilder()
+            .addComponents(select);
+
+        await interaction.reply({
+           content: '와우',
+            components: [row],
+        });
     },
 };
