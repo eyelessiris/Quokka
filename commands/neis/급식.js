@@ -1,35 +1,36 @@
-const { ActionRowBuilder, StringSelectMenuBuilder, StringSelectMenuOptionBuilder, SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
     category: 'neis',
     data: new SlashCommandBuilder()
         .setName('급식')
-        .setDescription('급식을 불러옵니다.'),
+        .setDescription('급식을 불러옵니다.')
+        .addStringOption(option =>
+            option.setName('number')
+                .setDescription('숫자를 선택하세요')
+                .setRequired(true)
+                .addChoices(
+                    { name: '조식', value: '1' },
+                    { name: '중식', value: '2' },
+                    { name: '석식', value: '3' }
+                )
+        ),
     async execute(interaction) {
-        const select = new StringSelectMenuBuilder()
-            .setCustomId('ㅁㄴㅇㄹ')
-            .setPlaceholder('qwer')
-            .addOptions(
-                new StringSelectMenuOptionBuilder()
-                    .setLabel('조식')
-                    .setDescription('조식')
-                    .setValue('breakfast'),
-                new StringSelectMenuOptionBuilder()
-                    .setLabel('중식')
-                    .setDescription('중식')
-                    .setValue('lunch'),
-                new StringSelectMenuOptionBuilder()
-                    .setLabel('석식')
-                    .setDescription('석식')
-                    .setValue('dinner'),
-            );
+        const meal = interaction.options.getString('number');
 
-        const row = new ActionRowBuilder()
-            .addComponents(select);
+        let message = '';
+        switch (meal) {
+            case '1':
+                message = '조식';
+                break;
+            case '2':
+                message = '중식';
+                break;
+            case '3':
+                message = '석식';
+                break;
+        }
 
-        await interaction.reply({
-           content: '와우',
-            components: [row],
-        });
-    },
+        await interaction.reply(message);
+    }
 };
