@@ -49,6 +49,9 @@ module.exports = {
         const mealNames = { '1': '조식', '2': '중식', '3': '석식' };
         const mealName = mealNames[mealCode];
         const today = dayjs().format('YYYYMMDD');
+        const year = dayjs().format('YYYY');
+        const month = dayjs().format('MM');
+        const day = dayjs().format('DD');
 
         try {
             const mealData = await getMealData(today, mealCode);
@@ -56,7 +59,7 @@ module.exports = {
             // Embed 생성
             const embed = new EmbedBuilder()
                 .setColor('#00FF00')
-                .setTitle(`${today} ${mealName}`)
+                .setTitle(`${year}년 ${month}월 ${day}일 ${mealName}`)
                 .setTimestamp();
 
             if (mealData) {
