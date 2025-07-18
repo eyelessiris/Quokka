@@ -3,6 +3,8 @@ const dayjs = require('dayjs');
 const NEIS_API_KEY = '8b9a7f9297914e9581120a991c035028';
 const ATPT_OFCDC_SC_CODE = 'F10';
 const SD_SCHUL_CODE = '7380292';
+const fetch = require('node-fetch');
+
 
 async function getMealData(date, mealCode) {
     const url = `https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=${NEIS_API_KEY}&Type=json&ATPT_OFCDC_SC_CODE=${ATPT_OFCDC_SC_CODE}&SD_SCHUL_CODE=${SD_SCHUL_CODE}&MLSV_YMD=${date}&MMEAL_SC_CODE=${mealCode}`;
