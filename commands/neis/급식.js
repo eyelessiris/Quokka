@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
 const dayjs = require('dayjs');
-const NEIS_API_KEY = '8b9a7f9297914e9581120a991c035028';
+const NEIS_API_KEY = process.env.NEIS_API_KEY;
 const ATPT_OFCDC_SC_CODE = 'F10';
 const SD_SCHUL_CODE = '7380292';
 const fetch = require('node-fetch');
