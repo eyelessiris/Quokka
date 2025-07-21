@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
+    category: 'miscellaneous',
     data: new SlashCommandBuilder()
         .setName('경서바보')
         .setDescription('그야 주경서는 바보니까요.'),
