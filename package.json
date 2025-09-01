@@ -1,0 +1,24 @@
+{
+  "name": "quokka",
+  "version": "1.0.0",
+  "description": "```javascript\r console.log(\"쿼카봇\")\r ```",
+  "homepage": "https://github.com/eyelessiris/Quokka#readme",
+  "bugs": {
+    "url": "https://github.com/eyelessiris/Quokka/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eyelessiris/Quokka.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "discord.js": "^14.22.1",
+    "dotenv": "^17.2.1"
+  }
+}
