@@ -2,7 +2,7 @@ require("dotenv").config();
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits, MessageFlags } = require('discord.js');
-const CLIENT_SECRET = process.env.CLIENT_SECRET_TEST;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
